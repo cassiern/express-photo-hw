@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1>Home</h1>
+<nav>
+    <a href="/photos/new">
+    <button>Create a New Destination</button></a>
+</nav>
+
+
+
+<% for(let i = 0; i < photos.length; i++){ %>
+		<ul>
+		<li>
+		Username: <a href="/photos/<%=photos[i]._id%>"><%=photos[i].username%></a>
+		</li>
+		</ul>
+		<img src="<%=photos[i].photoUrl%>">
+<% if(photos[i].caption !== ''){%><br>
+		Caption: <%=photos[i].caption%>
+	<%}%>
+
+
+<form action="/photos/<%=photos[i]._id%>/edit?_method=EDIT">
+<input type="submit" value="Edit">
+</form>
+
+<% } %>
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

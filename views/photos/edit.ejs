@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1>Edit Page</h1>
+
+
+<form method='POST' action="/photos/<%=photo._id%>?_method=PUT">
+            Username:
+    <input type="text" name="username" value="<%=photo.username%>"/><br/>
+            Photo Url:
+    <input type="text" name="photoUrl" value="<%=photo.photoUrl%>"><br>
+    		Caption:
+    <input type="text" name="caption" value="<%=photo.caption%>"/><br/>
+
+    <input type="submit" name="" value="Submit Changes"/>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

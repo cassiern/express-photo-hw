@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<a href="/photos">Home</a>
+<h1>Photo Show Page</h1>
+
+
+
+Username: <%=photo.username%><br>
+
+<img src="<%=photo.photoUrl%>"><br>
+
+<% if(photo.caption !== ''){%>
+		Caption: <%=photo.caption%>
+	<%}%>
+
+
+<form action="/photos/<%=photo._id%>?_method=DELETE" method="POST">
+	<input type="submit" value="Delete Post"/>
+</form>
+<form action="/photos/<%=photo._id%>/edit?_method=EDIT">
+<input type="submit" value="Edit">
+</form>
+
+
+
+
+
+</body>
+</html>
