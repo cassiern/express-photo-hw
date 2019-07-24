@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Photo = require('../models/photo');
+const User = require('../models/user');
 
 
 //index route
@@ -27,7 +28,15 @@ router.post('/', (req, res)=>{
 	})
 })
 router.get('/new', (req, res)=>{
-	res.render('photos/new.ejs')
+	User.find({}, (err, newUser)=> {
+		if(err){
+			console.log(err)
+		}else{
+			res.render('photos/new.ejs', {
+			users: newUser
+			})
+		}
+	})
 })
 
 //delete route
@@ -79,22 +88,6 @@ router.get('/:id/edit', (req, res)=>{
 		}
 	})
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

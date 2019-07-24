@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
 	<title></title>
 </head>
 <body>
+	<div>
 	<h1>Create Post</h1>
 <a href="/photos">Home</a>
-
-
+</div>
+<div>
+	<%=JSON.stringify(users)%>
 <form action="/photos" method="POST">
 *Add Photo Url Here: <input type="text" name="photoUrl"><br>
 
@@ -16,7 +19,7 @@
 Caption: <input type="text" name="caption"><br>
 <input type="submit" name="" value="Submit">
 </form>
-
+</div>
 
 
 

@@ -1,0 +1,50 @@
+html, body {
+	min-height: 100%;
+}
+body {
+	background-image: url("https://cdn-ep19.pressidium.com/wp-content/uploads/2018/04/Beach-photography-sunset.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+div {
+	background-color: rgba(255, 255, 255, .5);
+	text-align: center;
+	padding: 4px 4px;
+	list-style: none;
+	border: 1px solid black;
+	margin: 10px;
+}
+
+.button {
+	border-radius: 14px;
+	border: 2px solid black;
+	font-weight: bold;
+}
+.button:hover {
+	background-color: #cfcfcf;
+}
+img {
+	border: 2px solid grey;
+}
+
+.ul {
+	font-family: 'Literata', serif;
+	font-size: 20px;
+	background-color: 
+}
+.caption {
+	font-family: 'Literata', serif;
+	font-size: 16px;
+	background-color: 
+}
+a {
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+
+

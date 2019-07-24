@@ -2,32 +2,35 @@
 <html>
 <head>
 	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Literata&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="body">
+	<div>
 <h1>Home</h1>
 <nav>
     <a href="/photos/new">
-    <button>Create a New Destination</button></a>
+    <button class="button">Create a New Destination</button></a>
 </nav>
 
-
+</div>
 
 <% for(let i = 0; i < photos.length; i++){ %>
-		<ul>
-		<li>
+	<div>
+		<ul class="ul">
 		Username: <a href="/photos/<%=photos[i]._id%>"><%=photos[i].username%></a>
-		</li>
 		</ul>
 		<img src="<%=photos[i].photoUrl%>">
 <% if(photos[i].caption !== ''){%><br>
-		Caption: <%=photos[i].caption%>
+		<p class="caption">Caption: <%=photos[i].caption%></p>
+		</div>
 	<%}%>
 
-
+<div>
 <form action="/photos/<%=photos[i]._id%>/edit?_method=EDIT">
-<input type="submit" value="Edit">
+<input class="button" type="submit" value="Edit">
 </form>
-
+</div>
 <% } %>
 
 

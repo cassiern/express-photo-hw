@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
 	<title></title>
 </head>
 <body>
+	<div>
 <h1>Edit Page</h1>
-
-
+<a href="/photos">Home</a>
+</div>
+<div>
 <form method='POST' action="/photos/<%=photo._id%>?_method=PUT">
             Username:
     <input type="text" name="username" value="<%=photo.username%>"/><br/>
@@ -17,14 +20,7 @@
 
     <input type="submit" name="" value="Submit Changes"/>
 </form>
-
-
-
-
-
-
-
-
+</div>
 
 
 
