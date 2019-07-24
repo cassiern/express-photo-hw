@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Users Home Page</title>
+		<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
 
@@ -10,10 +11,10 @@
 <button>Create a New User</button>
 </form>
 
-
 <select>
 	<%for(let i=0; i <users.length; i++){%>
 		<option value="<%=users[i]._id%>"><%=users[i].name%></option>
+		<a href="users[i]._id"><%=users[i].name%></a>
 	<%}%>
 </select>
 

@@ -15,6 +15,9 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use('/photos', photoController);
 app.use('/users', userController);
 
+app.use('/', (req, res)=>{
+	res.render('index.ejs')
+})
 
 
 
