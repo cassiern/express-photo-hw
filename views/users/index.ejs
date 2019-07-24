@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Users Home Page</title>
 </head>
 <body>
 
+<h1>Users Home Page</h1>
+<form action="/users/new"> 
+<button>Create a New User</button>
+</form>
 
 
-
-
-
-<h2>Username:</h2>
-<h2>About me:</h2>
+<select>
+	<%for(let i=0; i <users.length; i++){%>
+		<option value="<%=users[i]._id%>"><%=users[i].name%></option>
+	<%}%>
+</select>
 
 
 
