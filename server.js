@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 require('./db/db');
 const photoController = require('./controllers/photos');
-
+const userController = require('./controllers/users');
 
 
 
@@ -13,7 +13,7 @@ app.use(express.static('public'));
 app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use('/photos', photoController);
-
+app.use('/users', userController);
 
 
 

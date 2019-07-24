@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
 			console.log(err)
 		}else{
 			console.log(foundPhotos);
-			res.render('index.ejs', {
+			res.render('photos/index.ejs', {
 				photos: foundPhotos
 			})
 		}

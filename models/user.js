@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-
-const userSchema = mongoose.userSchema({
+const userSchema = Schema({
 	name: String,
 	aboutMe: String,
 })
