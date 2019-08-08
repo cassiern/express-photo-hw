@@ -8,23 +8,33 @@
 <body class="body">
 	<div>
 <h1>Photo Home Page</h1>
-<nav>
-	<a href="/">Home | </a>
-    <a href="/photos/new"> Create a New Destination</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/photos/new">Create New Photo</a>
+      </li>
+    </ul>
+  </div>
 </nav>
 
 </div>
 
 <% for(let i = 0; i < photos.length; i++){ %>
 	<div>
-		<ul class="ul">
-		Username: <a href="/photos/<%=photos[i]._id%>"><%=photos[i].username%></a>
-		</ul>
 		<img src="<%=photos[i].photoUrl%>">
 <% if(photos[i].caption !== ''){%><br>
+	Username:<a href="/photos/<%=photos[i]._id%>"><%=photos[i].user.name%></a>
 		<p class="caption">Caption: <%=photos[i].caption%></p>
-		</div>
+		<form action="/photos/<%=photos[i]._id%>?_method=DELETE" method="POST">
+			<button>Delete Photo</button>
+		</form>
+				</div>
 	<%}%>
+
 
 <div>
 <form action="/photos/<%=photos[i]._id%>/edit?_method=EDIT">

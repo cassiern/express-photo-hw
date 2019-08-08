@@ -11,12 +11,16 @@
 </div>
 <div>
 <form method='POST' action="/photos/<%=photo._id%>?_method=PUT">
-            Username:
-    <input type="text" name="username" value="<%=photo.username%>"/><br/>
+	Username: <%=photo.user.name%><br>
             Photo Url:
     <input type="text" name="photoUrl" value="<%=photo.photoUrl%>"><br>
     		Caption:
     <input type="text" name="caption" value="<%=photo.caption%>"/><br/>
+    <select name="user">
+		<%users.forEach(function(user){%>
+		<option value="<%=user._id%>"><%=user.name%></option>
+		<%})%>
+	</select>
 
     <input type="submit" name="" value="Submit Changes"/>
 </form>

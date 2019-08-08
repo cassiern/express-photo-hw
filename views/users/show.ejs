@@ -2,24 +2,31 @@
 <html>
 <head>
 	<title>User's Page</title>
+			<link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
 <body>
+<nav>
+<a href="/users">User Home</a>
+<a href="/">Home</a>
+</nav>
 
 
 
+<div>
+UserName: <%=user.name%><br>
+About Me: <%=user.aboutMe%><br>
+Photos by this user:
+</div>
+<% for(let i = 0; i < photos.length; i++){%>
+	<img src="<%=photos[i].photoUrl%>" alt='photo'> 
+<%}%>
 
-
-
-UserName:<%=user.name%>
-Photo(s):
-About Me:<textarea rows="4" cols="20"><%=user.aboutMe%></textarea>
-
-
-
-
-
-
-
+<form action="/users/<%=user._id%>/EDIT?_method=EDIT">
+<input class="button" type="submit" value="Edit">
+</form>
+<form action="/users/<%=user._id%>?_method=DELETE" method="POST">
+	<button>Delete User</button>
+</form>
 
 
 

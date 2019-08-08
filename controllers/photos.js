@@ -8,18 +8,24 @@ const User = require('../models/user');
 //index route
 router.get('/', async (req, res) => {
 	try{
-	const photos = await Photo.find({});
-	console.log(photos);
-	res.render('photos/index.ejs', {
-		photos: photos
-	})} catch(err){
-		res.send(err)
-	}
+	const photos = await Photo.find({}).populate('user').exec((err, foundPhotos)=>
+		{
+			if(err){
+				console.log(err)
+			}else{
+				console.log(foundPhotos)
+				res.render('photos/index.ejs', {
+				photos: foundPhotos,
+			})}
+		})} catch(err){
+		console.log(err)
+		}
 })
 //create route
 router.post('/', async (req, res)=>{
 	try{
 	const createdPhoto = await Photo.create(req.body);
+			console.log(createdPhoto);
 			res.redirect('/photos')
 		}catch(err){
 			res.send(err)
@@ -39,7 +45,7 @@ router.get('/new', async (req, res)=>{
 //delete route
 router.delete('/:id', async (req, res)=>{
 	try{
-	const deletedPhoto = await Photo.findOneAndDelete(req.params.id);
+	const deletedPhoto = await Photo.findByIdAndDelete(req.params.id);
 			console.log(deletedPhoto, '<-- deletedPhoto')
 			res.redirect('/photos')
 		} catch(err){
@@ -51,12 +57,13 @@ router.delete('/:id', async (req, res)=>{
 //show route
 router.get('/:id', async (req, res)=>{
 	try{
-		const eachPhoto = await Photo.findById(req.params.id);
-			console.log(eachPhoto, '<-- eachPhoto in show.ejs route');
+		const photo = await Photo.findById(req.params.id).populate('user');
+			console.log(photo, '<-- photo in show.ejs route');
 			res.render('photos/show.ejs', {
-				photo: eachPhoto
+			user: photo.user,
+			photo: photo
 	})} catch(err){
-				res.send(err)
+			res.send(err)
 			}
 })
 //update route
@@ -71,9 +78,10 @@ router.put('/:id', async (req, res)=>{
 //edit
 router.get('/:id/edit', async (req, res)=>{
 	try{
-		const editedPhoto = await Photo.findById(req.params.id);
+		const photo = await Photo.findById(req.params.id).populate('user');
 				res.render('photos/edit.ejs', {
-				photo: editedPhoto
+				user: photo.user,
+				photo: photo
 	})} catch(err){
 			res.send(err)
 		}

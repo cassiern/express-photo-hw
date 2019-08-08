@@ -1,7 +1,5 @@
+
 html, body {
-	min-height: 100%;
-}
-body {
 	background-image: url("https://cdn-ep19.pressidium.com/wp-content/uploads/2018/04/Beach-photography-sunset.jpg");
 	background-repeat: no-repeat;
 	background-size: 100%;
@@ -13,6 +11,9 @@ div {
 	list-style: none;
 	border: 1px solid black;
 	margin: 10px;
+}
+.navbar.nav {
+	list-style: none;
 }
 
 .button {

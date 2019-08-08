@@ -9,17 +9,20 @@
 	<h1>Create Post</h1>
 <a href="/photos">Home</a>
 </div>
+
 <div>
 <form action="/photos" method="POST">
+<select name="user">
+	<%users.forEach(function(user){%>
+	<option value="<%=user._id%>"><%=user.name%></option>
+	<%})%>
+</select>
+
 *Add Photo Url Here: <input type="text" name="photoUrl"><br>
-
-*Username: <input type="text" name="username"><br>
-
 Caption: <input type="text" name="caption"><br>
 <input type="submit" name="" value="Submit">
 </form>
 </div>
-
 
 
 

@@ -7,16 +7,20 @@
 <body>
 
 <h1>Users Home Page</h1>
-<form action="/users/new"> 
-<button>Create a New User</button>
+
+<form action="/users/new">
+<a href="/">Home |</a> 
+<a href="/users/new"> Create a New User</a>
 </form>
 
-<select>
-	<%for(let i=0; i <users.length; i++){%>
-		<option value="<%=users[i]._id%>"><%=users[i].name%></option>
-		<a href="users[i]._id"><%=users[i].name%></a>
+<% for(let i = 0; i < users.length; i++){ %>
+	<div>
+		<ul class="ul">
+		<a href="/users/<%=users[i]._id%>"><%=users[i].name%></a>
+		</ul>
+		</div>
 	<%}%>
-</select>
+
 
 
 

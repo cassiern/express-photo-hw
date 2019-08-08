@@ -3,8 +3,7 @@ const Schema = mongoose.Schema;
 
 
 const photoSchema = new Schema({
-	username: {type: String, required: true},
-	photoUrl: {type: String, required: true},
+	photoUrl: String,
 	caption: {type: String, maxlength: 500},
 	user: {
 		type: Schema.Types.ObjectId,
@@ -12,9 +11,6 @@ const photoSchema = new Schema({
 	}
 });
 
-
-
 const Photo = mongoose.model('Photo', photoSchema);
-
 
 module.exports = Photo;

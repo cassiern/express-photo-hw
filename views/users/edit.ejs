@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1>Edit Page</h1>
+<a href="/users">Back</a>
+</div>
+<div>
+<form method='POST' action="/users/<%=user._id%>?_method=PUT">
+            Username:
+    <input type="text" name="name" value="<%=user.name%>"><br>
+    		About Me:
+    <input type="text" name="aboutMe" value="<%=user.aboutMe%>"/><br/>
+
+    <input type="submit" name="" value="Submit Changes"/>
+</form>
+</div>
+
+
+
+
+
+
+</body>
+</html>

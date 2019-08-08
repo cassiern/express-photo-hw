@@ -1,31 +1,37 @@
+
+<!DOCTYPE html>
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Photos</title>
 	<link rel="stylesheet" type="text/css" href="/css/main.css">
-	<link href="https://fonts.googleapis.com/css?family=Literata&display=swap" rel="stylesheet">
 </head>
 <body>
-	<div>
-<a href="/photos">Home</a>
+
+
+<div>
+<a href="/">Home</a>
+<a href="/photos">Photos Home</a>
 <h1>Photo Show Page</h1>
 </div>
-<div
 
-Username: <%=photo.username%><br>
-
+<div>
 <img src="<%=photo.photoUrl%>"><br>
+Username:<%=photo.user.name%><br>
 
-<% if(photo.caption !== ''){%>
+	<% if(photo.caption !== ''){%>
 		Caption: <%=photo.caption%>
 	<%}%>
 </div>
+
+
 <div>
 <form action="/photos/<%=photo._id%>?_method=DELETE" method="POST">
 	<input type="submit" value="Delete Post"/>
 </form>
 <form action="/photos/<%=photo._id%>/edit?_method=EDIT">
-<input type="submit" value="Edit">
+	<input type="submit" value="Edit">
 </form>
 </div>
 
